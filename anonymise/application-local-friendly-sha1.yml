@@ -1,0 +1,43 @@
+spring:
+  main:
+    web-application-type: none
+
+logging:
+  level:
+    org.apache.parquet.hadoop: WARN
+    org.springframework.security: INFO
+    #cloud.celonis: TRACE
+  file:
+    name: sap_connector.log
+
+    
+security:
+  jwt:
+    secret: secret
+
+uplink:
+  enabled: true
+  url: https://[team].[server].celonis.cloud/uplink/api/public/uplink
+  clientId: <CLIENT ID>
+  clientSecret: <CLIENT SECRET>
+
+
+celonis:
+  #proxy-config-path: proxy.yml
+  #internal-proxy-config-path: proxy.yml
+  sap:
+    #jobPrefix: Z_CELONIS
+    #package-size: 1000 # (RFC Module) limit the number of rows to keep in memory before writing chunk
+    #package-size-header: 1000 # (RFC Module) same as "package-size" but for the joined tables
+    #buffer-retry: true # (RFC module) keep chunk data in memory before it is saved to a file
+    #chunk-size: 50000 # (RFC module) limit the chunk size to reduce additional memory use
+    #retry-times: 100
+    #retry-secs: 30
+    hashing-algorithm: FRIENDLY-SHA1
+    #dataPushDeleteStrategy: DELETE
+    #dataPushDeleteStrategy: STORE_IN_STAGING_TABLE
+    #dataPushDeleteStrategy: IGNORE
+    #clientDependent: false
+    #chunked: true
+    #changeLogPackageSize: 50000
+    #asyncChangelogCleanup: false
