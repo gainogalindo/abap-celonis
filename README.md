@@ -1,2 +1,2 @@
-# abap_celonis
+# abap-celonis
 Collection of SAP ABAP tricks for Celonis implementation
